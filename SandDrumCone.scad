@@ -56,17 +56,23 @@ translate([0,0,5])
 
 //cube for holding bolt head
 
-//difference()
+difference()
 {
-    translate([0,0,1/2*cube_height]){
-//        cube([cyl_base*2-10,20,cube_height],center = true); //difference_cube
+    translate([0,0,1/2*cube_height])
+    {
+   cube([cyl_base*2-10,20,cube_height],center = true); //difference_cube
         }
-        translate([0,0,5]){
-            cube([bolt_head_span ,bolt_head_span ,cube_height-1],center = true);
+     translate([0,0,cube_height*.5])
+        {
+            translate([0,0,cube_height-bolt_head_depth])
+        {    
+            color("blue")
+            cube([bolt_head_span ,bolt_head_span ,cube_height],center = true);
             }
+        }
                     translate([0,0,0])
             {
-//            cylinder(h = bolt_hole_length,r1 = bolt_stem_radius,r2 = bolt_stem_radius,center = true);
+           cylinder(h = bolt_hole_length,r1 = bolt_stem_radius,r2 = bolt_stem_radius,center = true);
         }
     
 }
