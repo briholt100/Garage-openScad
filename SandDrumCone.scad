@@ -38,13 +38,13 @@ translate([0,0,5])
 
 difference()
     {
-  cylinder(40,cyl_base,cyl_top,center = false);
+  cylinder(80,cyl_base,cyl_top,center = false);
 
             //subtracted cylinder as a hollow
     
         translate([0,0,2])
         {
-           cylinder(50,circle_radius,circle_radius,center = false);
+           cylinder(85,circle_radius,circle_radius,center = false);
         }
         translate([0,0,0])
             {
