@@ -21,7 +21,7 @@ rotation_angle=acos(radius/hypotenuse);
 difference()
 {    
 scale([1,1,20]) 
-color("cornflowerblue",.5)
+color("cornflowerblue",.8)
 polygon(points=[[buffer,0],[buffer+radius,0],[buffer,height]],  paths=[[0,1,2]]);
 
   
@@ -37,4 +37,23 @@ polygon(points=[[buffer,0],[buffer+radius,0],[buffer,height]],  paths=[[0,1,2]])
             
             }    
        
+        }
+        
+        
+       translate([buffer+radius,5,0])
+        
+        {
+            rotate([-90,0,90-rotation_angle])
+
+            {
+                translate([-5,0,0])
+                {
+                scale([.3,.98,1])
+               { 
+                color("orange") cylinder(h=hypotenuse+3,r1=3,r2=3);   
+               }
+                   }
+                
+            
+            } 
         }
