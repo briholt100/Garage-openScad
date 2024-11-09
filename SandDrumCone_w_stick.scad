@@ -13,9 +13,9 @@
 
 circle_radius = 14.7/2;
 bolt_hole_length = 20;
-cyl_base = 25;  //radius
-cyl_top = circle_radius+1;    //radius
-
+cyl_base = 45;  //radius
+cyl_top = (circle_radius+10);    //radius
+echo("outer top radius",cyl_top);
 
 bolt_head_span = 6.47;
 cube_height = bolt_head_span ;
