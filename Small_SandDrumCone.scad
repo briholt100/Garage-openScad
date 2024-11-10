@@ -7,7 +7,7 @@ A conical drum to glue sand paper to in order to bore out the inside diameter of
 
 //module, a function that creates bolt hole object for difference
         
-        module bolt_hole_module(height=height,bolt_hole_r=6.25/2,center=true){
+        module bolt_hole_module(height=10,bolt_hole_r=6.25/2,center=true){
             cylinder(h=height,r1=bolt_hole_r,r2=bolt_hole_r,center=center);
         }
         
@@ -25,12 +25,12 @@ difference()
          color("lightgreen")
             cylinder(height,cyl_base_radius,cyl_top_radius);
             
-            bolt_hole_module();         
+            translate([0,0,2]) bolt_hole_module();         
             
             //differnece cylinder
-    translate([0,0,cube_height])
+    translate([0,0,cube_height-1])
     {
-    bolt_hole_module(height,bolt_hole_r=5,center=false);
+  bolt_hole_module(height,bolt_hole_r=5,center=false);
     }
 }
 
@@ -57,7 +57,9 @@ difference()
             cube([bolt_head_span ,bolt_head_span ,cube_height],center = true);
             }
         }
-        bolt_hole_module();
+        
+    translate([0,0,2]) bolt_hole_module();
+        
     }
 
 
