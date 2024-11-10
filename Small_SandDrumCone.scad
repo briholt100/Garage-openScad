@@ -1,3 +1,5 @@
+//translate([0,0,85]) circle(8);
+
 /*
 A conical drum to glue sand paper to in order to bore out the inside diameter of washers
 */
