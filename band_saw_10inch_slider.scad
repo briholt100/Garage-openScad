@@ -1,4 +1,7 @@
-
+// current throat is 3 inch
+//slider channel is 11.5 inches
+//echo(25.4*11.5);    //292 mm
+//echo(25.4*3);       //76 mm
 
 //band saw slider guide for holding cylinders
 
