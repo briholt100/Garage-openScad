@@ -45,13 +45,13 @@ color("green")
 mirror([0,10,0] ){
 translate([-throat_slider_distance+3,0,1.9]){ 
 rotate([90,0,49]){
-cylinder(h= throat_slider_distance+15 ,r1=3, r2=3);
+cylinder(h= throat_slider_distance+30 ,r1=3, r2=3);
 }
 }
 }
 translate([-throat_slider_distance+3,0,1.9]){ 
 rotate([90,0,49]){
-cylinder(h= throat_slider_distance+15 ,r1=3, r2=3);
+cylinder(h= throat_slider_distance+30 ,r1=3, r2=3);
 }
 }
 
