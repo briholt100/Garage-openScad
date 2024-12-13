@@ -36,7 +36,9 @@ difference(){
 
 color("purple",alpha)
 translate([0,0,-.5]){
+    linear_extrude(3){
 polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+20]]);
+}
 }
 
 //rails on stablility trian
