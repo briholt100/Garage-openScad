@@ -17,17 +17,18 @@ v_holder = [[0,0],[0,v_length],[v_length,0]]; // triangle for holder
 v_holder_path = [0,1,2]; // triangle paths
 
 
-
-//
-//difference(){
-//    linear_extrude(height=100){
-//        polygon(points=v_holder,paths=[v_holder_path]);
-//        }
-//    translate([v_thickness,v_thickness,-1]){
-//        cube([v_length,v_length,v_length+2]);
-//    }
-//}
-//    
+rotate([0,-90,0]){
+rotate([0,0,-45]){
+difference(){
+    linear_extrude(height=200){
+        polygon(points=v_holder,paths=[v_holder_path]);
+        }
+    translate([v_thickness,v_thickness,-1]){
+        cube([v_length,v_length,v_length+200]);
+    }
+}
+    }
+}
 
 
 color("purple",alpha)
@@ -35,13 +36,22 @@ translate([0,0,-.5]){
 polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+20]]);
 }
 
-//rails on stablility triangle
+//rails on stablility trian
+
 color("green")
-translate([-throat_slider_distance,0,0]){ 
-rotate([90,90,0]){
-cylinder(h= throat_slider_distance ,r1=3, r2=3);
+mirror([0,10,0] ){
+translate([-throat_slider_distance+3,0,1.75]){ 
+rotate([90,0,68]){
+cylinder(h= throat_slider_distance+15 ,r1=3, r2=3);
 }
 }
+}
+translate([-throat_slider_distance+3,0,1.75]){ 
+rotate([90,0,68]){
+cylinder(h= throat_slider_distance+15 ,r1=3, r2=3);
+}
+}
+
 //
 color("cornflowerblue",alpha)
 //
