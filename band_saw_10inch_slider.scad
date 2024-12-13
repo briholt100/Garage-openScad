@@ -7,6 +7,7 @@ slider_h = 8;
 slider_l = 200;
 alpha=.9;
 
+throat_slider_distance=200;
 
 //how thick to make V guide? 4 mil?
 v_thickness=4;
@@ -28,12 +29,19 @@ v_holder_path = [0,1,2]; // triangle paths
 //}
 //    
 
-throat_slider_distance=200;
+
 color("purple",alpha)
 translate([0,0,-.5]){
-polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l],[0,-.5*slider_l]]);
+polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+20]]);
 }
 
+//rails on stablility triangle
+color("green")
+translate([-throat_slider_distance,0,0]){ 
+rotate([90,90,0]){
+cylinder(h= throat_slider_distance ,r1=3, r2=3);
+}
+}
 //
 color("cornflowerblue",alpha)
 //
