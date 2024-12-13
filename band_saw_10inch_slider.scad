@@ -39,7 +39,7 @@ difference(){
 
 color("purple",alpha)
 translate([0,0,-.5]){
-    linear_extrude(3){
+    linear_extrude(4){
 polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+20]]);
 }
 }
@@ -48,13 +48,13 @@ polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+2
 
 color("green")
 mirror([0,10,0] ){
-translate([-throat_slider_distance+3,0,1.9]){ 
+translate([-throat_slider_distance+5,0,2.4]){ 
 rotate([90,0,49]){
 cylinder(h= throat_slider_distance+30 ,r1=3, r2=3);
 }
 }
 }
-translate([-throat_slider_distance+3,0,1.9]){ 
+translate([-throat_slider_distance+5,0,2.4]){ 
 rotate([90,0,49]){
 cylinder(h= throat_slider_distance+30 ,r1=3, r2=3);
 }
