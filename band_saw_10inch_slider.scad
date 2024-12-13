@@ -66,3 +66,18 @@ color("cornflowerblue",alpha)
 translate([0,0,-0.5*slider_h]){
     cube([slider_w ,slider_l ,slider_h],center=true);}
 //
+
+
+// nees some suports for the V holder
+    color("orange")
+    mirror([0,20,0])
+    {
+    translate([-62,-20,0])
+    {
+    cube([70,3,20]);
+    }
+}
+translate([-62,-20,0])
+    {
+    cube([70,3,20]);
+    }
