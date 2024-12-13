@@ -19,7 +19,9 @@ v_length=40;
 v_holder = [[0,0],[0,v_length],[v_length,0]]; // triangle for holder
 v_holder_path = [0,1,2]; // triangle paths
 
-translate([8,0,0])
+
+module band_saw_guide(){
+    translate([8,0,0])
 {
 rotate([0,-90,0]){
 rotate([0,0,-45]){
@@ -40,7 +42,7 @@ difference(){
 color("purple",alpha)
 translate([0,0,-.5]){
     linear_extrude(4){
-polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+20]]);
+polygon(points=[[-throat_slider_distance,0],[9,.5*slider_l-20],[9,-.5*slider_l+20]]);
 }
 }
 
@@ -48,15 +50,15 @@ polygon(points=[[-throat_slider_distance,0],[0,.5*slider_l-20],[0,-.5*slider_l+2
 
 color("green")
 mirror([0,10,0] ){
-translate([-throat_slider_distance+5,0,2.4]){ 
-rotate([90,0,49]){
-cylinder(h= throat_slider_distance+30 ,r1=3, r2=3);
+translate([-throat_slider_distance+4,0,2.4]){ 
+rotate([90,0,51.5]){
+cylinder(h= throat_slider_distance+36 ,r1=3, r2=3);
 }
 }
 }
-translate([-throat_slider_distance+5,0,2.4]){ 
-rotate([90,0,49]){
-cylinder(h= throat_slider_distance+30 ,r1=3, r2=3);
+translate([-throat_slider_distance+4,0,2.4]){ 
+rotate([90,0,51.5]){
+cylinder(h= throat_slider_distance+36 ,r1=3, r2=3);
 }
 }
 
@@ -81,3 +83,19 @@ translate([-62,-20,0])
     {
     cube([70,3,20]);
     }
+
+}
+
+
+//band_saw_guide();
+
+
+difference()
+{
+    band_saw_guide();
+
+    translate([16,0,0])
+        {
+        cube([slider_w ,slider_l ,slider_h+5],center=true);
+        }
+}
