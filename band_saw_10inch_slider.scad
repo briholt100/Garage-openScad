@@ -1,14 +1,25 @@
+//band saw slider guide for holding cylinders
+
 // current throat is 3 inch
 //slider channel is 11.5 inches
 //echo(25.4*11.5);    //292 mm
 //echo(25.4*3);       //76 mm
 
-//band saw slider guide for holding cylinders
+// make a ruler to check
+translate([-8-8,-65,-.5])
+{
+    rotate([-90,0,0])
+    cube([8,4,4],center=false);
+}
+
+
+
+
 
 slider_w = 16;
-slider_h = 8;
+slider_h = 8;  //need to check depth of saw
 slider_l = 200;
-alpha=.9;
+alpha=.2;
 
 throat_slider_distance=92;
 
