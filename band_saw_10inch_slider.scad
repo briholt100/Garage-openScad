@@ -9,16 +9,7 @@
 
 // make a ruler to check
 
-//
-////translate([-8-8,-65,-.5])  //near intersection of base and slider
-//translate([08,-78,3.5])  //near back of base
-//{
-//    color("red")
-//    rotate([-90,0,0])
-//    cube([4,3.5,4],center=false);
-//}
-//
-//
+
 
 slider_w = 16;
 slider_h = 8;  //need to check depth of saw
