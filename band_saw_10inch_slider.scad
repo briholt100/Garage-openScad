@@ -76,7 +76,7 @@ translate([0,0,-0.5*slider_h]){
 //
 
 
-// nees some suports for the V holder
+// nedes some suports for the V holder
     color("orange")
     mirror([0,20,0])
     {
