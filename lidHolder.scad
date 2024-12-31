@@ -71,7 +71,7 @@ color("purple"){
 color("orange") 
 
 {
-    translate([bar_length-5,-end_square-8,-30]) rotate([0,0,0]) L_braket();
+  translate([bar_length-5,-end_square-8,-30]) rotate([0,0,0]) L_braket();
     }
 color ("grey")
 difference()
@@ -86,7 +86,7 @@ color("cornflowerblue") translate([20,4,-2.5]) make_hole();
 difference()
 {
     rotate([180,0,0]) make_bar(first_square=first_square,end_square=end_square);
-    translate([-12,-2,2]) rotate([180,0,0]) make_bar(bar_length=bar_length+10);   
+    translate([-12,-2,5]) rotate([180,0,0]) make_bar(bar_length=bar_length+10);   
 }
 
 }
@@ -117,7 +117,7 @@ difference()
 difference()
 {
     rotate([180,0,0]) make_bar(first_square=first_square,end_square=end_square);
-    translate([-12,-2,2]) rotate([180,0,0]) make_bar(bar_length=bar_length+10);
+    translate([-12,-2,5]) rotate([180,0,0]) make_bar(bar_length=bar_length+10);
 
     
 }
