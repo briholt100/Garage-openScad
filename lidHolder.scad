@@ -5,9 +5,13 @@
 first_square=25;
 end_square=50;
 bar_length=197;
-
-//!rotate_extrude($fn=10) rotate([0,90,0]) polygon(points=[[0,-2],[0,-10],[-first_square,-10]]);
-
+//support_tri();
+module support_cone(h=first_square){
+    difference(){    
+        translate([0,0,0]) cylinder(h=h,r1=7.5,r2=0);
+        translate([-first_square/2,0,-1]) cube(h+2);
+        }
+    }
 
 module make_bar(bar_length=bar_length, first_square=25,end_square=50){
     color("green")
@@ -23,13 +27,7 @@ translate([0,0,first_square])
 translate([bar_length,0,end_square]) 
     rotate([0,90,0]) cube([end_square,end_square,2],center=false);
    }
-
-
 }
-
-
-
-
 
 //make supports
 
@@ -49,6 +47,11 @@ translate([-1,-2,18])make_bar(bar_length=8, first_square=10,end_square=10);
 }
 }
 
+//make holes
+
+module make_hole(){
+  cylinder(h=8,r1=2.5,r2=1.5);
+}
 
 
 
@@ -60,48 +63,57 @@ translate([-1,-2,18])make_bar(bar_length=8, first_square=10,end_square=10);
 
 translate([0,-120,0]) 
     mirror([0,1,0]){
-color("blue") 
-support_tri();
-        translate([192,0,0]) support_tri();
-        translate([192/2,0,0]) support_tri();
-//translate([7,8,-30])rotate([0,0,180]) L_braket();
-//        translate([bar_length/2,8,-30]) rotate([0,0,180]) L_braket();
-//translate([bar_length-5,8,-30]) rotate([0,0,180]) L_braket();
+color("purple"){ 
+   translate([8,0,0]) rotate([180,0,0]) support_cone();
+   translate([192/2,0,0]) rotate([180,0,0]) support_cone(h=end_square-15);
+    translate([185,0,0])rotate([180,0,0]) support_cone(h=end_square-1);}
 
 color("orange") 
 
 {
     translate([bar_length-5,-end_square-8,-30]) rotate([0,0,0]) L_braket();
     }
-color ("green")
-   translate([0,0,-2]) cube([bar_length+2,8,2]);
-    
+color ("grey")
+difference()
+ {
+    translate([0,0,-2]) cube([bar_length+2,8,2]);
+   
+color("cornflowerblue") translate([20,4,-2.5]) make_hole();
+ color("cornflowerblue") translate([108,4,-2.5]) make_hole();
+ 
+ color("cornflowerblue") translate([195,4,-2.5]) make_hole();      
+} 
 difference()
 {
     rotate([180,0,0]) make_bar(first_square=first_square,end_square=end_square);
-    translate([-12,-2,2]) rotate([180,0,0]) make_bar(bar_length=bar_length+10);
-
-    
+    translate([-12,-2,2]) rotate([180,0,0]) make_bar(bar_length=bar_length+10);   
 }
-
-
 
 }
 
-color("green")
-support_tri();
-        translate([192,0,0]) support_tri();
-        translate([192/2,0,0]) support_tri();
-//translate([7,8,-30])rotate([0,0,180]) L_braket();
-//        translate([bar_length/2,8,-30]) rotate([0,0,180]) L_braket();
-//translate([bar_length-5,8,-30]) rotate([0,0,180]) L_braket();
+color("red"){ 
+   translate([8,0,0]) rotate([180,0,0]) support_cone();
+   translate([192/2,0,0]) rotate([180,0,0]) support_cone(h=end_square-15);
+    translate([185,0,0])rotate([180,0,0]) support_cone(h=end_square-1);}
 
 color("orange") 
 
 {
     translate([bar_length-5,-end_square-8,-30]) rotate([0,0,0]) L_braket();
     }
-translate([0,0,-2]) cube([bar_length+2,8,2]);
+
+
+color("grey")
+difference()
+{
+    translate([0,0,-2]) cube([bar_length+2,8,2]);
+ color("cornflowerblue") translate([20,4,-2.5]) make_hole();
+ color("cornflowerblue") translate([108,4,-2.5]) make_hole();
+ 
+ color("cornflowerblue") translate([195,4,-2.5]) make_hole();      
+}
+
+
 difference()
 {
     rotate([180,0,0]) make_bar(first_square=first_square,end_square=end_square);
