@@ -3,11 +3,11 @@
 inside_dia=5.75;
 out_dia= 7;
 
-ringer_finger_dia = 23;
+ringer_finger_dia = 21;
 ring_thickness=2;
 ring_height=9;
 
-module square_torus(rotate_angle=60,width=ring_thickness,height=ring_height,res=100,ring_dia=23){
+module square_torus(rotate_angle=60,width=ring_thickness,height=ring_height,res=100,ring_dia=ringer_finger_dia){
     rotate_extrude(angle=rotate_angle,$fn=res) {
         translate([ring_dia/2,0,0]) square([width,height], $fn=res);
 }
