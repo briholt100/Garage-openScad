@@ -1,16 +1,31 @@
 // creating support tray extensions to fit filament for drying
 
-count_spines=8;
+
+radius=13.5*25.4/2;
+
+difference()
+{
+    cylinder(h=2*25.4,r1=radius,r2=radius);
+    translate([0,0,-1])cylinder(h=3*25.4,r1=radius-1,r2=radius-1);
+}
+
+
+difference(){
+    cylinder(h=2*25.4,r1=radius+3,r2=radius+3);
+    translate([0,0,-1])cylinder(h=3*25.4,r1=radius+1.5,r2=radius+1.5);
+}
+
+count_spines=12;
 rad=13.5*25.4/2;
 
-module spines(count_spines=count_spines,radius=rad+2){
+module spines(count_spines=count_spines,radius=rad){
 
-
+color("blue")
 for(i=[0:360/count_spines:360])
     {
         rotate([0,0,i])
         {
-            translate([(radius),0,0])cylinder(100,1,1);
+            translate([(radius),0,-1])cylinder(100,1.5,1.5);
             }
             }
             
