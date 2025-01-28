@@ -1,0 +1,19 @@
+// creating support tray extensions to fit filament for drying
+
+count_spines=8;
+rad=13.5*25.4/2;
+
+module spines(count_spines=count_spines,radius=rad+2){
+
+
+for(i=[0:360/count_spines:360])
+    {
+        rotate([0,0,i])
+        {
+            translate([(radius),0,0])cylinder(100,1,1);
+            }
+            }
+            
+        }
+        
+        spines();
