@@ -1,7 +1,16 @@
 // creating support tray extensions to fit filament for drying
 
+inner_radius = 12.75*25.4;
 
-radius=13.5*25.4/2;
+inner_ring_thickness = 3/32*25.4;
+
+outer_ring_thickness = 3/32*25.4;
+
+ring_gap = 3/16*25.4;
+
+total_diamter = inner_radius + 2*inner_ring_thickness + 2*outer_ring_thickness + + 2*ring_gap;
+
+radius=total_diamter/2; 
 
 difference()
 {
