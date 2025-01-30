@@ -1,3 +1,7 @@
+//inner ring needs to taper
+
+
+
 // creating support tray extensions to fit filament for drying
 
 inner_diam= 12.75*25.4;
@@ -26,7 +30,7 @@ difference()
 
 difference()
 {
-    cylinder(h=2*25.4,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
+    cylinder(h=2.125*25.4,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
     translate([0,0,-1])cylinder(h=3*25.4,r1=inner_diam/2 + inner_ring_thickness +  ring_gap,r2=inner_diam/2 + inner_ring_thickness +  ring_gap,$fn=100);
 }
 
