@@ -7,8 +7,10 @@
 inner_diam= 12.75*25.4;
 
 inner_ring_thickness = 3/32*25.4;
+inner_ring_height = 2;
 
 outer_ring_thickness = 3/32*25.4;
+outer_ring_height = 3;
 
 ring_gap = 3/16*25.4;
 
@@ -40,6 +42,8 @@ for(i=[0:360/count_spines:360])
 count_spines=12;
         rad=13.5*25.4/2;
 spines();
+        
+        //need to make an L shape rotate extrude that sits on top of out ring, with same translate parameters, plus outer ring height.
 
 
 
@@ -51,8 +55,8 @@ difference()
 union() {
 difference()
 {
-    cylinder(h=2*25.4,r1=inner_diam/2 + inner_ring_thickness,r2=inner_diam/2 + inner_ring_thickness,$fn=100);
-    translate([0,0,-1])cylinder(h=3*25.4,r1=inner_diam/2,r2=inner_diam/2,$fn=100);
+    cylinder(h=inner_ring_height*25.4 ,r1=inner_diam/2 + inner_ring_thickness,r2=inner_diam/2 + inner_ring_thickness,$fn=100);
+    translate([0,0,-1])cylinder(h=outer_ring_height*25.4 ,r1=inner_diam/2,r2=inner_diam/2,$fn=100);
 }
 
 
@@ -60,8 +64,8 @@ difference()
 
 difference()
 {
-    cylinder(h=2.125*25.4,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
-    translate([0,0,-1])cylinder(h=3*25.4,r1=inner_diam/2 + inner_ring_thickness +  ring_gap,r2=inner_diam/2 + inner_ring_thickness +  ring_gap,$fn=100);
+    cylinder(h=(inner_ring_height+.125)*25.4,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
+    translate([0,0,-1])cylinder(h=outer_ring_height*25.4,r1=inner_diam/2 + inner_ring_thickness +  ring_gap,r2=inner_diam/2 + inner_ring_thickness +  ring_gap,$fn=100);
 }
 
 
