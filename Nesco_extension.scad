@@ -7,10 +7,10 @@
 inner_diam= 12.75*25.4;
 
 inner_ring_thickness = 3/32*25.4;
-inner_ring_height = 2;
+inner_ring_height = 2.75;
 
 outer_ring_thickness = 3/32*25.4;
-outer_ring_height = 3;
+outer_ring_height = 4;
 
 ring_gap = 3/16*25.4;
 
@@ -46,7 +46,7 @@ spines();
         //need to make an L shape rotate extrude that sits on top of out ring, with same translate parameters, plus outer ring height.
 
 
-
+//color("red",alpha=.1)translate([172,0,0]){
 
 difference()
  {       
