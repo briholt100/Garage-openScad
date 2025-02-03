@@ -100,13 +100,14 @@ module cheese_brick(a=240, c="lightgreen")
 //need to make an L shape rotate extrude that sits on top of out ring, with same translate parameters, plus outer ring height.
 
 
-color("cornflowerblue")translate([0,0,(inner_ring_height+.125)*25.4])rotate_extrude()translate([
-        inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,0,0])polygon(points=[[0,0],
-        [3/32*25.4,0],
+module outer_lip()
+        {color("cornflowerblue")translate([0,0,(inner_ring_height+.125)*25.4])rotate_extrude($fn=100)translate([
+        inner_diam/2 + inner_ring_thickness + ring_gap,0,0])polygon(points=[[0,0],
+        [(3/32 )*25.4,0],
         [3/32*25.4,3/32*25.4],
         [(3/32-3/64)*25.4,3/32*25.4],
         [(3/32-3/64)*25.4,(3/32-3/64)*25.4],
-        [0,(3/32-3/64)*25.4]]);
+        [0,(3/32-3/64)*25.4]]);}
 
         
 difference(){
@@ -123,6 +124,7 @@ inner_ring();
 spines(count_spines=13);
 //outer ring creation
 outer_ring();
+    outer_lip();
     }
         
         
