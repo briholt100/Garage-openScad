@@ -78,12 +78,6 @@ for(i=[0:360/count_spines:360])
         }
 
 
-
-
-
-
-
-
 //remove 2/3rds
         
 module cheese_brick(a=240, c="lightgreen")
@@ -112,6 +106,24 @@ module outer_lip()
 
         
 //!outer_lip();
+
+//need to make a reversed  L lip.
+
+
+module inv_outer_lip()
+        {color("cornflowerblue")translate([0,0,(inner_ring_height)*25.4])rotate_extrude($fn=100)translate([
+        inner_diam/2 + inner_ring_thickness + ring_gap,0,0])
+translate([(3/32 )*25.4,0,0])mirror([180,0,0])polygon(points=[[0,0],
+        [(3/32 )*25.4,0],
+        [3/32*25.4,-1/8*25.4], 
+        [(3/32-2/64)*25.4,-1/8*25.4],
+        [(3/32-2/64)*25.4,-(3/32-2/64)*25.4],
+        [0,-(3/32-2/64)*25.4]]);
+
+            }
+
+ 
+!inv_outer_lip();
 
 //put it together
 
