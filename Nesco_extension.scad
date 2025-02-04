@@ -70,8 +70,8 @@ for(i=[0:360/count_spines:360])
     {
         rotate([0,0,i])
         {
-            translate([(inner_diam/2 + inner_ring_thickness+ring_gap/2),0,-1])cylinder(inner_ring_height*25.4,1.5,1.5,$fn=100);
-            translate([(inner_diam/2 + inner_ring_thickness-1),-.5,-1])cube([6,1,inner_ring_height*25.4]);
+            translate([(inner_diam/2 + inner_ring_thickness+ring_gap/2),0,0])cylinder(inner_ring_height*25.4-2,1.5,1.5,$fn=100);
+            translate([(inner_diam/2 + inner_ring_thickness-1),-.5,0])cube([6,1,inner_ring_height*25.4-2]);
             }
             }
             
