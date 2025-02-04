@@ -60,7 +60,7 @@ color("cornflowerblue")translate([0,0,15]) cylinder(100,inner_diam/2+5,inner_dia
 //spines module
 
 
-count_spines=12;
+count_spines=14;
         rad=13.5*25.4/2;
 
 module spines(count_spines=count_spines,radius=rad){
@@ -80,7 +80,7 @@ for(i=[0:360/count_spines:360])
 
 //remove 2/3rds
         
-module cheese_brick(a=240, c="lightgreen")
+module cheese_brick(a=300, c="lightgreen")
         {
             translate([0,0,-1])color(c)rotate_extrude(angle = a) square(radius+4);
         }
@@ -138,7 +138,7 @@ union()
 
 union() {
 inner_ring();
-spines(count_spines=13);
+spines(count_spines);
 //outer ring creation
 outer_ring();
     outer_lip();
