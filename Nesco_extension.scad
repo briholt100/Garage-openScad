@@ -48,7 +48,7 @@ color("cornflowerblue")translate([0,0,15]) cylinder(100,inner_diam/2+5,inner_dia
     ring_gap=ring_gap,
     outer_ring_height=inner_ring_height){
     difference(){
-    cylinder(h=(inner_ring_height)*25.4,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
+    translate([0,0,2])cylinder(h=(inner_ring_height)*25.4-2,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
     translate([0,0,-1])cylinder(h=(inner_ring_height+1)*25.4,r1=inner_diam/2 + inner_ring_thickness +  ring_gap,r2=inner_diam/2 + inner_ring_thickness +  ring_gap,$fn=100);
 }
 }
@@ -82,7 +82,7 @@ for(i=[0:360/count_spines:360])
         
 module cheese_brick(a=240, c="lightgreen")
         {
-            translate([0,0,-1])color(c)rotate_extrude(angle = a) square(radius+3);
+            translate([0,0,-1])color(c)rotate_extrude(angle = a) square(radius+4);
         }
 
 //add clasps
@@ -111,7 +111,7 @@ module outer_lip()
 
 
 module inv_outer_lip()
-        {color("cornflowerblue")translate([0,0,(inner_ring_height)*25.4])rotate_extrude($fn=100)translate([
+        {color("cornflowerblue")translate([0,0,0])rotate_extrude($fn=100)translate([
         inner_diam/2 + inner_ring_thickness + ring_gap,0,0])
 translate([(3/32 )*25.4,0,0])mirror([180,0,0])polygon(points=[[0,0],
         [(3/32 )*25.4,0],
@@ -123,7 +123,7 @@ translate([(3/32 )*25.4,0,0])mirror([180,0,0])polygon(points=[[0,0],
             }
 
  
-!inv_outer_lip();
+
 
 //put it together
 
@@ -142,11 +142,12 @@ spines(count_spines=13);
 //outer ring creation
 outer_ring();
     outer_lip();
+    color("orange")translate([0,0,3])inv_outer_lip();
     }
         
         
 }
 }
-rotate([0,0,5])cheese_brick();
+rotate([0,0,5])translate([0,0,-1])cheese_brick();
 }
 
