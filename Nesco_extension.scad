@@ -178,18 +178,25 @@ translate([inner_diam/2 + inner_ring_thickness,10,0])rotate([0,0,13])color("oran
 //hooks
 
 module hook(){
-//linear_extrude(inner_ring_height*25.4)
-//union()
+difference()
+    {
+rotate([0,90,0])
+    rotate_extrude($fn=100)
+
+
+    difference()
 {
-    polygon(points=[
-        [-.50,0],
-        [ring_gap+.5,0],
-        [ring_gap*2/3,10],
-        [ring_gap*1/3,10]
-    ]);
-//    translate([ring_gap/2,10,0])circle(r=ring_gap*1/6,$fn=100);
-
-};
-
+    square(5);
+translate([4.5,5/2,0])   
+    circle(1,$fn=100);
+    
 }
 
+color("yellow")translate([-1,1,-5.5])cube(11);
+rotate([0,90,0])cylinder(12,2.25,2.25,$fn=100);
+}
+}
+
+translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([0,0,0])color("purple")hook();
+
+rotate([0,0,-50])translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])color("lightblue")hook();
