@@ -7,7 +7,7 @@
 inner_diam= 12.75*25.4;
 
 inner_ring_thickness = 3/32*25.4;
-inner_ring_height = 2.75;
+inner_ring_height = 1;
 
 outer_ring_thickness = 3/32*25.4;
 outer_ring_height = 5.75;
@@ -149,5 +149,47 @@ outer_ring();
 }
 }
 rotate([0,0,5])translate([0,0,-1])cheese_brick();
+}
+
+
+
+
+//clasp a sort of wedge?
+
+module clasp(){
+linear_extrude(inner_ring_height*25.4)
+union()
+{
+    polygon(points=[
+        [-.50,0],
+        [ring_gap+.5,0],
+        [ring_gap*2/3,10],
+        [ring_gap*1/3,10]
+    ]);
+    translate([ring_gap/2,10,0])circle(r=ring_gap*1/6,$fn=100);
+
+};
+
+}
+translate([inner_diam/2 + inner_ring_thickness,10,0])rotate([0,0,13])color("orange")clasp();
+
+
+
+//hooks
+
+module hook(){
+//linear_extrude(inner_ring_height*25.4)
+//union()
+{
+    polygon(points=[
+        [-.50,0],
+        [ring_gap+.5,0],
+        [ring_gap*2/3,10],
+        [ring_gap*1/3,10]
+    ]);
+//    translate([ring_gap/2,10,0])circle(r=ring_gap*1/6,$fn=100);
+
+};
+
 }
 
