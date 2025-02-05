@@ -157,7 +157,7 @@ rotate([0,0,5])translate([0,0,-1])cheese_brick();
 //clasp a sort of wedge?
 
 module clasp(){
-linear_extrude(inner_ring_height*25.4)
+linear_extrude(inner_ring_height*25.4-1)
 union()
 {
     polygon(points=[
@@ -199,4 +199,4 @@ rotate([0,90,0])cylinder(12,2.25,2.25,$fn=100);
 
 translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([0,0,0])color("purple")hook();
 
-rotate([0,0,-50])translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])color("lightblue")hook();
+rotate([0,0,-50])translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([180,0,0])color("lightblue")hook();
