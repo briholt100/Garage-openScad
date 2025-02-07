@@ -41,13 +41,7 @@ color("cornflowerblue")translate([0,0,15]) cylinder(100,inner_diam/2+5,inner_dia
 //outer ring
 
     module outer_ring(
-    inner_ring_height=inner_ring_height,
-    inner_diam=inner_diam,
-    inner_ring_thickness =inner_ring_thickness,
-    outer_ring_thickness =outer_ring_thickness,
-    ring_gap=ring_gap,
-    outer_ring_height=inner_ring_height){
-    difference(){
+    inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness =inner_ring_thickness,outer_ring_thickness =outer_ring_thickness,ring_gap=ring_gap,outer_ring_height=inner_ring_height){    difference(){
     translate([0,0,2])cylinder(h=(inner_ring_height)*25.4-2,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
     translate([0,0,-1])cylinder(h=(inner_ring_height+1)*25.4,r1=inner_diam/2 + inner_ring_thickness +  ring_gap,r2=inner_diam/2 + inner_ring_thickness +  ring_gap,$fn=100);
 }
@@ -56,9 +50,8 @@ color("cornflowerblue")translate([0,0,15]) cylinder(100,inner_diam/2+5,inner_dia
 
 
 
-//outer_ring();
-//spines module
 
+//spines module
 
 count_spines=14;
         rad=13.5*25.4/2;
@@ -87,11 +80,7 @@ module cheese_brick(a=300, c="lightgreen")
 
 //add clasps
         
-        
-
-
-
-    
+   
 //need to make an L shape rotate extrude that sits on top of out ring, with same translate parameters, plus outer ring height.
 
 
@@ -186,7 +175,7 @@ rotate([0,90,0])
 
     difference()
 {
-    square(5);
+    square(4);
 translate([4.5,5/2,0])   
     circle(1,$fn=100);
     
