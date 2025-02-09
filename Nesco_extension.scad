@@ -22,21 +22,23 @@ radius=total_diamter/2;
 //inner ring
 
 
-module inner_ring(inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness=inner_ring_thickness,outer_ring_height=outer_ring_height){
+module inner_ring(inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness=inner_ring_thickness,outer_ring_height=outer_ring_height,inner_adj=4)
+{
+    translate([0,0,-inner_adj])
  difference()
     {
     union(){ difference()
 {
-    cylinder(h=inner_ring_height*25.4 ,r1=inner_diam/2 + inner_ring_thickness,r2=inner_diam/2 + inner_ring_thickness,$fn=100);
+    cylinder(h=inner_ring_height*25.4+inner_adj ,r1=inner_diam/2 + inner_ring_thickness,r2=inner_diam/2 + inner_ring_thickness,$fn=100);
     translate([0,0,-1])cylinder(h=outer_ring_height*25.4 ,r1=inner_diam/2,r2=inner_diam/2,$fn=100);
 }
 }
-color("cornflowerblue")translate([0,0,15]) cylinder(100,inner_diam/2+5,inner_diam/2-7,center=true,$fn=100);  //tapers the inner ring
+color("cornflowerblue")translate([0,0,7]) cylinder(125,inner_diam/2+10,inner_diam/2-7,center=true,$fn=100);  //tapers the inner ring
 }
 
 }
 
-
+//!inner_ring();
 
 //outer ring
 
@@ -75,7 +77,7 @@ for(i=[0:360/count_spines:360])
         
 module cheese_brick(a=300, c="lightgreen")
         {
-            translate([0,0,-1])color(c)rotate_extrude(angle = a) square(radius+4);
+            translate([0,0,-3])color(c)rotate_extrude(angle = a) square(radius+4);
         }
 
         
