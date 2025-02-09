@@ -29,7 +29,7 @@ module inner_ring(inner_ring_height=inner_ring_height,inner_diam=inner_diam,inne
     {
     union(){ difference()
 {
-    cylinder(h=inner_ring_height*25.4+inner_adj ,r1=inner_diam/2 + inner_ring_thickness,r2=inner_diam/2 + inner_ring_thickness,$fn=100);
+    cylinder(h=inner_ring_height*25.4+inner_adj ,r1=inner_diam/2 + inner_ring_thickness+1,r2=inner_diam/2 + inner_ring_thickness+1,$fn=100);
     translate([0,0,-1])cylinder(h=outer_ring_height*25.4 ,r1=inner_diam/2,r2=inner_diam/2,$fn=100);
 }
 }
@@ -136,7 +136,7 @@ outer_ring();
         
 }
 }
-rotate([0,0,5])translate([0,0,-1])cheese_brick();
+rotate([0,0,5])translate([0,0,-1.2])cheese_brick();
 }
 
 
@@ -147,7 +147,7 @@ rotate([0,0,5])translate([0,0,-1])cheese_brick();
 module clasp(){
 difference()
     {    
-linear_extrude(inner_ring_height*25.4-1)
+linear_extrude(inner_ring_height*25.4-7)
 
     union()
 {
@@ -163,7 +163,7 @@ linear_extrude(inner_ring_height*25.4-1)
 
 scale([.7,.8,1]) 
 color("green")translate([1,1,-.5]){
-    linear_extrude(inner_ring_height*25.4)
+    linear_extrude(inner_ring_height*25.4-3)
 union()
 {
     polygon(points=[
@@ -178,7 +178,7 @@ union()
 }
 }
 }
-translate([inner_diam/2 + inner_ring_thickness,10,0])rotate([0,0,13])color("orange")clasp();
+translate([inner_diam/2 + inner_ring_thickness,10,04])rotate([0,0,13])color("orange")clasp();
 
 
 
