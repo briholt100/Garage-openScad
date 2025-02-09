@@ -152,8 +152,8 @@ linear_extrude(inner_ring_height*25.4-7)
     union()
 {
     polygon(points=[
-        [-.50,0],
-        [ring_gap+.5,0],
+        [0,0],
+        [ring_gap,0],
         [ring_gap*2/3,10],
         [ring_gap*1/3,10]
     ]);
@@ -167,8 +167,8 @@ color("green")translate([1,1,-.5]){
 union()
 {
     polygon(points=[
-        [-.50,0],
-        [ring_gap+.5,0],
+        [0,0],
+        [ring_gap,0],
         [ring_gap*2/3,10],
         [ring_gap*1/3,10]
     ]);
@@ -178,7 +178,7 @@ union()
 }
 }
 }
-translate([inner_diam/2 + inner_ring_thickness,10,04])rotate([0,0,13])color("orange")clasp();
+translate([inner_diam/2 + inner_ring_thickness+.4,10,04])rotate([0,0,9.5])color("orange")clasp();
 
 
 
