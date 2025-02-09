@@ -78,10 +78,7 @@ module cheese_brick(a=300, c="lightgreen")
             translate([0,0,-1])color(c)rotate_extrude(angle = a) square(radius+4);
         }
 
-//add clasps
         
-   
-//need to make an L shape rotate extrude that sits on top of out ring, with same translate parameters, plus outer ring height.
 
 
 module outer_lip()
@@ -146,7 +143,25 @@ rotate([0,0,5])translate([0,0,-1])cheese_brick();
 //clasp a sort of wedge?
 
 module clasp(){
+difference()
+    {    
 linear_extrude(inner_ring_height*25.4-1)
+
+    union()
+{
+    polygon(points=[
+        [-.50,0],
+        [ring_gap+.5,0],
+        [ring_gap*2/3,10],
+        [ring_gap*1/3,10]
+    ]);
+    translate([ring_gap/2,10,0])circle(r=ring_gap*1/6,$fn=100);
+
+}
+
+scale([.7,.8,1]) 
+color("green")translate([1,1,-.5]){
+    linear_extrude(inner_ring_height*25.4)
 union()
 {
     polygon(points=[
@@ -157,8 +172,9 @@ union()
     ]);
     translate([ring_gap/2,10,0])circle(r=ring_gap*1/6,$fn=100);
 
-};
-
+}
+}
+}
 }
 translate([inner_diam/2 + inner_ring_thickness,10,0])rotate([0,0,13])color("orange")clasp();
 
@@ -175,14 +191,14 @@ rotate([0,90,0])
 
     difference()
 {
-    square(4);
+    square(5);
 translate([4.5,5/2,0])   
     circle(1,$fn=100);
     
 }
 
 color("yellow")translate([-1,1,-5.5])cube(11);
-rotate([0,90,0])cylinder(12,2.25,2.25,$fn=100);
+rotate([0,90,0])cylinder(12,3,3,$fn=100);
 }
 }
 
