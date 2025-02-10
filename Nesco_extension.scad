@@ -147,7 +147,7 @@ rotate([0,0,5])translate([0,0,-1.2])cheese_brick();
 module clasp(){
 difference()
     {    
-linear_extrude(inner_ring_height*25.4-7)
+linear_extrude(inner_ring_height*25.4-8)
 
     union()
 {
@@ -178,7 +178,7 @@ union()
 }
 }
 }
-translate([inner_diam/2 + inner_ring_thickness+.4,10,04])rotate([0,0,9.5])color("orange")clasp();
+translate([inner_diam/2 + inner_ring_thickness+.4,10,05])rotate([0,0,9.5])color("orange")clasp();
 
 
 
