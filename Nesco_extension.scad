@@ -22,14 +22,14 @@ radius=total_diamter/2;
 //inner ring
 
 
-module inner_ring(inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness=inner_ring_thickness,outer_ring_height=outer_ring_height,inner_adj=4)
+module inner_ring(inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness=inner_ring_thickness,outer_ring_height=outer_ring_height,inner_adj=3)
 {
     translate([0,0,-inner_adj])
  difference()
     {
     union(){ difference()
 {
-    cylinder(h=inner_ring_height*25.4+inner_adj ,r1=inner_diam/2 + inner_ring_thickness+1,r2=inner_diam/2 + inner_ring_thickness+1,$fn=100);
+    cylinder(h=inner_ring_height*25.4+inner_adj+1.5 ,r1=inner_diam/2 + inner_ring_thickness+1,r2=inner_diam/2 + inner_ring_thickness+1,$fn=100);
     translate([0,0,-1])cylinder(h=outer_ring_height*25.4 ,r1=inner_diam/2,r2=inner_diam/2,$fn=100);
 }
 }
@@ -38,7 +38,7 @@ color("cornflowerblue")translate([0,0,7]) cylinder(125,inner_diam/2+10,inner_dia
 
 }
 
-//!inner_ring();
+
 
 //outer ring
 
