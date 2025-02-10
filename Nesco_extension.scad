@@ -7,7 +7,7 @@
 inner_diam= 12.75*25.4;
 
 inner_ring_thickness = 3/32*25.4;
-inner_ring_height = 1;
+inner_ring_height = 1+(50/24.4);
 
 outer_ring_thickness = 3/32*25.4;
 outer_ring_height = 5.75;
