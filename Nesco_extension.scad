@@ -33,7 +33,12 @@ module inner_ring(inner_ring_height=inner_ring_height,inner_diam=inner_diam,inne
     translate([0,0,-1])cylinder(h=outer_ring_height*25.4 ,r1=inner_diam/2,r2=inner_diam/2,$fn=100);
 }
 }
-color("cornflowerblue")translate([0,0,7]) cylinder(125,inner_diam/2+10,inner_diam/2-7,center=true,$fn=100);  //tapers the inner ring
+color("cornflowerblue")translate([0,0,7]) cylinder(125,inner_diam/2+10,inner_diam/2-7,center=true,$fn=100);  //tapers the inner ring on bottom
+   
+ translate([0,0,(inner_ring_height*25.4+4)])rotate_extrude($fn=100)
+translate([inner_diam/2+3,0,0]) circle(1,$fn=100);//tapers on top
+  
+
 }
 
 }
@@ -43,12 +48,13 @@ color("cornflowerblue")translate([0,0,7]) cylinder(125,inner_diam/2+10,inner_dia
 //outer ring
 
     module outer_ring(
-    inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness =inner_ring_thickness,outer_ring_thickness =outer_ring_thickness,ring_gap=ring_gap,outer_ring_height=inner_ring_height){    difference(){
+    inner_ring_height=inner_ring_height,inner_diam=inner_diam,inner_ring_thickness =inner_ring_thickness,outer_ring_thickness =outer_ring_thickness,ring_gap=ring_gap,outer_ring_height=inner_ring_height)
+{    difference(){
     translate([0,0,2])cylinder(h=(inner_ring_height)*25.4-2,r1=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,r2=inner_diam/2 + inner_ring_thickness + outer_ring_thickness + ring_gap,$fn=100);
     translate([0,0,-1])cylinder(h=(inner_ring_height+1)*25.4,r1=inner_diam/2 + inner_ring_thickness +  ring_gap,r2=inner_diam/2 + inner_ring_thickness +  ring_gap,$fn=100);
+    
 }
 }
-
 
 
 
