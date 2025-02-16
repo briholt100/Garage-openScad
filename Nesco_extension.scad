@@ -1,7 +1,6 @@
 //inner ring needs to taper
 
 
-
 // creating support tray extensions to fit filament for drying
 
 inner_ring_height = (2); //This creates the depth of the tray; here the side is 2 inches.  Conversion to metric occurs in the module. 
