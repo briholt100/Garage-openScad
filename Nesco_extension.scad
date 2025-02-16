@@ -4,20 +4,16 @@
 
 // creating support tray extensions to fit filament for drying
 
+inner_ring_height = (2); //This creates the depth of the tray; here the side is 2 inches.  Conversion to metric occurs in the module. 
+
+
 inner_diam= 12.75*25.4;
-
 inner_ring_thickness = 3/32*25.4;
-inner_ring_height = 1+(50/24.4);
-
 outer_ring_thickness = 3/32*25.4;
 outer_ring_height = 5.75;
-
 ring_gap = 3/16*25.4;
-
 total_diamter = inner_diam+ 2*inner_ring_thickness + 2*outer_ring_thickness + + 2*ring_gap;
-
 radius=total_diamter/2; 
-
 
 //inner ring
 
@@ -62,7 +58,7 @@ translate([inner_diam/2+3,0,0]) circle(1,$fn=100);//tapers on top
 //spines module
 
 count_spines=14;
-        rad=13.5*25.4/2;
+rad=13.5*25.4/2;
 
 module spines(count_spines=count_spines,radius=rad){
 
