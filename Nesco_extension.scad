@@ -6,6 +6,9 @@
 
 inner_ring_height = (2); //This creates the depth of the tray; here the side is 2 inches.  Conversion to metric occurs in the module. 
 
+a = 300;  // this is an angle that is set to make 1/6th (300 degrees) the size of a circle. If you want to render a small version, change this to 350, and then go to the very bottom of this code and comment out the light blue hook
+
+
 
 inner_diam= 12.75*25.4;
 inner_ring_thickness = 3/32*25.4;
@@ -76,7 +79,7 @@ for(i=[0:360/count_spines:360])
 
 //creates a cheese brick round to remove 5/6ths
         
-module cheese_brick(a=300, c="lightgreen"){
+module cheese_brick(a=a, c="lightgreen"){
             translate([0,0,-3])color(c)rotate_extrude(angle = a) square(radius+4);
         }
         
@@ -212,6 +215,6 @@ translate([inner_diam/2 + inner_ring_thickness+.4,10,05])rotate([0,0,9.5])color(
 
 //add the two 'hooks's
 
-rotate([0,0,-50])translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([180,0,0])color("lightblue")hook();
-
 translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([0,0,0])color("pink")hook();
+
+rotate([0,0,-50])translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([180,0,0])color("lightblue")hook();  //comment out this one for a small test print
