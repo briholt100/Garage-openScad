@@ -172,7 +172,7 @@ rotate([0,90,0])cylinder(12,3,3,$fn=100);
 }
 
 
-translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([0,0,0])color("purple")hook();
+
 
 
 //putting it all together
@@ -206,7 +206,12 @@ rotate([0,0,5])translate([0,0,-1.2])cheese_brick();
 
 
 
+//add the clasp wedge
+
 translate([inner_diam/2 + inner_ring_thickness+.4,10,05])rotate([0,0,9.5])color("orange")clasp();
 
+//add the two 'hooks's
 
 rotate([0,0,-50])translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([180,0,0])color("lightblue")hook();
+
+translate([inner_diam/2+8.5,0,inner_ring_height*25.4/2 ])rotate([0,0,0])color("pink")hook();
