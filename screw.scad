@@ -1,4 +1,6 @@
-use </media/brian/dater_bridge2/Projects/Ender3D/threads-library-by-cuiso-v1.scad>
+use <\\wsl.localhost\Ubuntu\home\ty\projects\Garage-openScad\threads-library-by-cuiso-v1.scad>
+///media/brian/dater_bridge2/Projects/Ender3D/threads-library-by-cuiso-v1.scad
+
 
 //cylinder(d=10, h=24,$fn=300);
 
