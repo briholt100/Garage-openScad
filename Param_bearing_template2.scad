@@ -25,14 +25,14 @@ module make_race (x =or-ir,y=depth){
 }
 
 
-module make_bearings(r=(race_radius-1),raise=race_radius){
-    translate([(ir+race_radius),depth/2,raise])color("orange") sphere(r);
+module make_bearings(r=(race_radius-.85),raise=race_radius){
+    translate([(ir+race_radius)-.4,depth/2,raise])color("orange") sphere(r);
     
 }
-ct_balls = 28;
+ct_balls = 23;
 difference(){
 
-union(){color("purple",alpha=.2)make_race();
+union(){color("purple",alpha=.8)make_race();
 for(i=[0:360/ct_balls:360])
     {
     rotate([0,0,i])make_bearings();
@@ -43,6 +43,6 @@ for(i=[0:360/ct_balls:360])
 
 //find_center();
     
-translate([-or/2,0,-1])cube(or*3);
+//translate([-40,0,-1])cube([or*3,20,20]);
 
 }
