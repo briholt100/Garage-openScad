@@ -1,4 +1,4 @@
-
+    
 ir = 36/2;
 or = 51/2;
 race_radius = (or-ir)/2;
@@ -20,7 +20,7 @@ module make_race (x =or-ir,y=depth){
     {
     translate([ir,0,0])square([x,y]);    
     //hollow out race
-    color("purple")find_center(r=race_radius,raise=0,sx=.8,sy=1.5,sz=1);
+    color("purple")find_center(r=race_radius,raise=0,sx=.8,sy=1.1,sz=1);
 }
 }
 
@@ -43,6 +43,6 @@ for(i=[0:360/ct_balls:360])
 
 //find_center();
     
-//translate([-40,0,-1])cube([or*3,20,20]);
+//translate([0,-ir/2-5,-1])cube([or*2,or,or],center=true);
 
 }
