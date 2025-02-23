@@ -1,6 +1,6 @@
     
 ir = 36/2;
-or = 51/2;
+or = 56/2;
 race_radius = (or-ir)/2;
 depth= 8;
 $fn=100;
@@ -25,11 +25,11 @@ module make_race (x =or-ir,y=depth){
 }
 
 
-module make_bearings(r=(race_radius-.85),raise=race_radius){
+module make_bearings(r=(race_radius-1.1),raise=race_radius-1){
     translate([(ir+race_radius)-.4,depth/2,raise])color("orange") sphere(r);
     
 }
-ct_balls = 23;
+ct_balls = 18;
 difference(){
 
 union(){color("purple",alpha=.8)make_race();
