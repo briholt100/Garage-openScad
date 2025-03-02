@@ -17,7 +17,7 @@ difference()
 
 
 
-
+//rotate([0,90,0])  // makes it tall, maybe better for cura?
 difference()
 {
 union(){
