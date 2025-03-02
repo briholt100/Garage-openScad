@@ -1,5 +1,5 @@
 $fn=100;
-length=90;
+length=94;
 od=20;
 id=16;
 
@@ -22,9 +22,9 @@ difference()
 {
 union()
 {
-    create_cyl();
-    translate([0,0,length/2])rotate([0,90,0])color("cornflowerblue")create_cyl(l=length/2);
-    translate([0,0,length/2])rotate([0,90,90])color("lightgreen")create_cyl(l=length/2);
+    create_cyl();//main pipe
+    translate([0,0,length/2])rotate([0,90,0])color("cornflowerblue")create_cyl(l=length/2-5); //blue pipe
+    translate([0,0,length/2])rotate([0,90,90])color("lightgreen")create_cyl(l=length/2-5);//green pipe
 }
     color("blue")translate([0,0,-.5])cylinder(length+1 ,r=id/2);
 }
