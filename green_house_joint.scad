@@ -18,6 +18,9 @@ difference()
 
 
 
+
+translate([0,0,od/2])rotate([0,-90,0])
+{
 difference()
 {
 union()
@@ -38,14 +41,15 @@ translate([0,10,length/2-9])
 translate([10,0,length/2-9])
  rotate([0,90,-90])color("green")linear_extrude(2)polygon(points =[[0,0],[10,0],[0,10]]);
 
+}
 
 
-
-
-translate([-50,0,0])color("orange")create_cyl(l=94);
-translate([-50,0,length/2])rotate([-90,00,00])color("purple")create_cyl(l=length/2-5);//purple pipe
-
-translate([-50,10,length/2-9])
- rotate([-90,90,-90])color("lightblue")linear_extrude(2)polygon(points =[[0,0],[10,0],[0,10]]);
-
-
+// basic T
+//
+//translate([-50,0,0])color("orange")create_cyl(l=94);
+//translate([-50,0,length/2])rotate([-90,00,00])color("purple")create_cyl(l=length/2-5);//purple pipe
+//
+//translate([-50,10,length/2-9])
+// rotate([-90,90,-90])color("lightblue")linear_extrude(2)polygon(points =[[0,0],[10,0],[0,10]]);
+//
+//
