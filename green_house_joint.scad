@@ -1,7 +1,7 @@
 $fn=100;
 length=94;
 od=20;
-id=16.25;
+id=16.5;
 
 module create_cyl(l=length,inside_dia=id,out_dia=od){
 difference()
