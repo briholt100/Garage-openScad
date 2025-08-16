@@ -1,5 +1,5 @@
 $fn=100;
-length=94;
+length=80;
 od=20;
 id=16.5;
 
