@@ -10,7 +10,13 @@ t=5;
 
 //main body
 difference(){
-color("cornflowerblue")cube([w,l,t]);
+color("cornflowerblue")
+//minkowski()
+    {
+        cube([w,l,t-1]);
+//        cylinder(r=4,h=1);
+        
+    }
 
 // cut out holes
 wireRadius = 4;
