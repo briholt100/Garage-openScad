@@ -7,7 +7,17 @@ flat_factor=.4;
 
 $fn=30;
 
-cube([w,l,h]);
+minkowski()
+{
+translate([0,0,1.5])sphere(.5);
+translate([0.5,0.5,-1.])cube([w,l,h]);
+}
+
+
+
+
+
+
 hull()
 {
 translate([15,w/2,w/2])
