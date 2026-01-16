@@ -4,7 +4,7 @@ include <BOSL2/screws.scad>
 
 $fn = 140;
 
-color("cornflowerblue")circle(2.125*25.4);
+//translate([0,0,-5])color("cornflowerblue")circle(2.125*25.4);
 
 
 //metric_bolt(size=22, pitch=1.5, l=40);
@@ -12,6 +12,7 @@ color("cornflowerblue")circle(2.125*25.4);
 //metric_nut("M22", pitch=1.5);
 
 difference(){
-nut("M60",thickness="thin",pitch=1.5);
+color("cornflowerblue")nut("M60x1.5",thickness="thin",anchor=CENTER);
 
-cube([120,120,30],center=true);}
+translate([-55,-55,0])color("green")mirror([0,0,01])cube([110,110,20],center=false);
+    }
