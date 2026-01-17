@@ -6,11 +6,15 @@ $fn = 140;
 
 hole_dia=60;
 pitch=1.5;
-hole_radius=hole_dia/2;
-nut_width = 45;
-
 stringMetric = "M";
 bolt_name = str(stringMetric,hole_dia,"x",pitch);
+hole_radius=hole_dia/2;
+nut_width = 45;
+nut_length= 53;
+
+dif_box_x=nut_width*2+1;
+dif_box_y=nut_length*2+1;
+dif_box_z=24;
 
 //translate([0,0,-5])color("cornflowerblue")circle(2.125*25.4);
 
@@ -20,9 +24,17 @@ bolt_name = str(stringMetric,hole_dia,"x",pitch);
 //metric_nut("M22", pitch=1.5);
 
 difference(){
-color("cornflowerblue")nut(bolt_name,thickness="thin",anchor=CENTER,
+
+translate([0,0,-8])
+    color("cornflowerblue")nut(bolt_name,thickness="thin",
+    anchor=CENTER,
     blunt_start2=false);
 
-translate([-55,-55,0])color("green")mirror([0,0,01])cube([110,110,20],center=false);
-    }
+  translate([0,0,-dif_box_z/2])
+  color("green")  mirror([0,0,01])
+                                    cube([dif_box_x,
+                                        dif_box_y,
+                                         dif_box_z],
+                                                center=true);
+}
   
