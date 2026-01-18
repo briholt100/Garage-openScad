@@ -3,10 +3,10 @@ include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
 
 // M60 nut parameters
-thread_diameter = 60;     // M60
+thread_diameter = 35;     // M35
 thread_pitch = 1.5;       // 1.5mm pitch
-nut_thickness = 10;       // 10mm thick
-hex_size = 90;            // Across-flats dimension
+nut_thickness = 5.5;       // 6mm thick
+hex_size = 54;            // Across-flats dimension
 chamfer_size = 1.5;       // Chamfer size in mm
 
 // Create the nut with chamfered edges

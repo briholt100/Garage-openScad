@@ -4,13 +4,13 @@ include <BOSL2/screws.scad>
 
 $fn = 140;
 
-hole_dia=60;
+hole_dia=35;
 pitch=1.5;
 stringMetric = "M";
 bolt_name = str(stringMetric,hole_dia,"x",pitch);
 hole_radius=hole_dia/2;
-nut_width = 45;
-nut_length= 53;
+nut_width = 54;
+nut_length= 62.5;
 
 dif_box_x=nut_width*2+1;
 dif_box_y=nut_length*2+1;
