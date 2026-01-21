@@ -23,9 +23,9 @@ difference() {
     // Threaded hole with chamfered entry/exit
     union() {
         // Main threaded hole
-        threaded_rod(
+        translate([0,0,-1])threaded_rod(
             d=thread_diameter, 
-            l=nut_thickness,
+            l=nut_thickness+3,
             pitch=thread_pitch,
             internal=true,
             anchor=BOTTOM
