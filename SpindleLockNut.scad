@@ -11,9 +11,9 @@ chamfer_size = 1.5;       // Chamfer size in mm
 
 // birfield parameters
 
-birf_diam = 0; //1.11 inches
-birf_depth = 0; //1.162 inches
-birf_depth_to_snap = 0; //0.924 inches
+birf_diam = 1.11*25.4; //1.11 inches
+birf_depth = 1.162*25.4; //1.162 inches
+birf_depth_to_snap = 0.924*25.4; //0.924 inches
 
 // Create the nut with chamfered edges
 difference() {
@@ -46,3 +46,12 @@ difference() {
             cylinder(h=chamfer_size, r1=thread_diameter/2 + chamfer_size, r2=thread_diameter/2, $fn=60);
     }
 }
+
+
+color("red")threaded_rod(
+            d=thread_diameter, 
+            l=nut_thickness+5,
+            pitch=thread_pitch,
+            internal=true,
+            anchor=BOTTOM
+        );
