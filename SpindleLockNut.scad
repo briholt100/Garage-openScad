@@ -9,6 +9,12 @@ nut_thickness = 5.5;       // 6mm thick
 hex_size = 54;            // Across-flats dimension
 chamfer_size = 1.5;       // Chamfer size in mm
 
+// birfield parameters
+
+birf_diam = 0; //1.11 inches
+birf_depth = 0; //1.162 inches
+birf_depth_to_snap = 0; //0.924 inches
+
 // Create the nut with chamfered edges
 difference() {
     // Hexagonal outer shape with chamfers on top and bottom edges
