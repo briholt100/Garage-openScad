@@ -80,6 +80,9 @@ difference(){
 
 color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
 
+color("cornflowerblue")translate([0,0,-1])cylinder(h=nut_thickness+25+birf_depth_to_snap, r=(thread_diameter/2)-7,$fn=100);
+
+
 for(i = [0 :count]){
     rotate([0, 0, i * 360 / count])
     translate([pathRadius, 0, nut_thickness+6])
