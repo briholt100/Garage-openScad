@@ -14,8 +14,15 @@ chamfer_size = 1.5;       // Chamfer size in mm
 birf_diam = 1.11*25.4; //1.11 inches
 birf_depth = 1.162*25.4; //1.162 inches
 birf_depth_to_snap = 0.924*25.4; //0.924 inches
+count=28;  //spline count
+pathRadius = birf_diam/2;  // Radius of the axle
+spline_radius = 1.4;
+
+
+
 
 // Create the nut with chamfered edges
+translate([55,0,0])
 difference() {
     // Hexagonal outer shape with chamfers on top and bottom edges
     cyl(
@@ -66,6 +73,15 @@ translate([0,0,-1])color("green")cylinder(h=nut_thickness+7,r=(thread_diameter/2
 
 
 
+
 //make splined axle
+translate([-35,0,0])
+difference(){
 
 color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
+
+for(i = [0 :count]){
+    rotate([0, 0, i * 360 / count])
+    translate([pathRadius, 0, nut_thickness+6])
+    color("blue")cylinder(h=birf_depth_to_snap,r=spline_radius, $fn=50);}
+}
