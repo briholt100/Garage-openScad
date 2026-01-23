@@ -48,6 +48,7 @@ difference() {
 }
 
 
+difference (){
 color("red")threaded_rod(
             d=thread_diameter, 
             l=nut_thickness+5,
@@ -55,3 +56,7 @@ color("red")threaded_rod(
             internal=true,
             anchor=BOTTOM
         );
+
+
+translate([0,0,-1])color("green")cylinder(h=nut_thickness+7,r=(thread_diameter/2)-4);
+}
