@@ -68,4 +68,4 @@ translate([0,0,-1])color("green")cylinder(h=nut_thickness+7,r=(thread_diameter/2
 
 //make splined axle
 
-color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4);
+color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
