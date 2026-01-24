@@ -92,11 +92,18 @@ for(i = [0 :count]){
 //makde tool housing
 
 difference(){
+
+difference(){
 translate([0,0,nut_thickness-2])
     color("lightgreen")
-    cylinder(h=birf_depth+2,r=(thread_diameter/2)+1);
+    cylinder(h=birf_depth+4,r=(thread_diameter/2)+1);
 
 translate([0,0,nut_thickness-2.5])
     color("lightgreen")
     cylinder(h=birf_depth+2.2,r=(thread_diameter/2-3.5));
+}
+
+translate([10,0,15])
+cube(50);
+
 }
