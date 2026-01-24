@@ -73,20 +73,6 @@ difference() {
 
 
 
-//make splined axle
-
-difference(){
-
-color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
-
-color("cornflowerblue")translate([0,0,-1])cylinder(h=nut_thickness+25+birf_depth_to_snap, r=(thread_diameter/2)-7,$fn=100);
-
-
-for(i = [0 :count]){
-    rotate([0, 0, i * 360 / count])
-    translate([pathRadius, 0, nut_thickness+6])
-    color("blue")cylinder(h=birf_depth_to_snap,r=spline_radius, $fn=50);}
-}
 
 
 //makde tool housing
@@ -106,4 +92,31 @@ translate([0,0,nut_thickness-2.5])
 translate([10,0,15])
 cube(50);
 
+}
+//
+//
+
+
+translate([0,0,70])
+{
+    union(){
+    translate([0,0,-6])color("orange")cylinder(10,r=4,$fn=50);
+color("orange")cylinder(4,r1=3,r2=10,$fn=50);
+    }
+}
+
+
+//make splined axle
+
+difference(){
+
+color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
+
+color("cornflowerblue")translate([0,0,-1])cylinder(h=nut_thickness+25+birf_depth_to_snap, r=(thread_diameter/2)-7,$fn=100);
+
+
+for(i = [0 :count]){
+    rotate([0, 0, i * 360 / count])
+    translate([pathRadius, 0, nut_thickness+6])
+    color("blue")cylinder(h=birf_depth_to_snap,r=spline_radius, $fn=50);}
 }
