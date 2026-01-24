@@ -98,5 +98,5 @@ translate([0,0,nut_thickness-2])
 
 translate([0,0,nut_thickness-2.5])
     color("lightgreen")
-    cylinder(h=birf_depth+5,r=(thread_diameter/2-3.5));
+    cylinder(h=birf_depth+2.2,r=(thread_diameter/2-3.5));
 }
