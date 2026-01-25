@@ -52,5 +52,53 @@ difference() {
 }
 }
 
+
+
+
+// birfield parameters
+
+birf_diam = 1.11*25.4; //1.11 inches
+birf_depth = 1.162*25.4; //1.162 inches
+birf_depth_to_snap = 0.924*25.4; //0.924 inches
+count=28;  //spline count
+pathRadius = birf_diam/2;  // Radius of the axle
+spline_radius = 1.4;
+
+module make_spindle_section(){
+// create red spindle section
+difference (){
+color("red")threaded_rod(
+            d=thread_diameter, 
+            l=nut_thickness+5,
+            pitch=thread_pitch,
+            internal=true,
+            anchor=BOTTOM
+        );
+
+
+translate([0,0,-1])color("green")cylinder(h=nut_thickness+7,r=(thread_diameter/2)-4);
+}
+}
+
+
+
+//make splined axle
+module make_birf_axle(){
+difference(){
+
+color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
+
+color("cornflowerblue")translate([0,0,-1])cylinder(h=nut_thickness+25+birf_depth_to_snap, r=(thread_diameter/2)-7,$fn=100);
+
+
+for(i = [0 :count]){
+    rotate([0, 0, i * 360 / count])
+    translate([pathRadius, 0, nut_thickness+6])
+    color("blue")cylinder(h=birf_depth_to_snap,r=spline_radius, $fn=50);}
+}
+}
+
 //remove // for preview
-//54mm_nut();
+translate([50,0,0]) 54mm_nut();
+translate([-35,0,0])  make_birf_axle();
+make_spindle_section();
