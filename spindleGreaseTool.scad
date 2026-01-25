@@ -17,9 +17,11 @@ birf_depth_to_snap = 0.924*25.4; //0.924 inches
 count=28;  //spline count
 pathRadius = birf_diam/2;  // Radius of the axle
 spline_radius = 1.4;
-
-
-
+center_bolt_depth = 20;
+center_bolt_inner_radius = 7/2;
+center_bolt_camfer_depth = 1;
+center_bolt_camfer_top_r = 9;
+center_bolt_camfer_bot_r = 7;
 
 // Create the nut with chamfered edges
 difference() {
