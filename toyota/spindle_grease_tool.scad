@@ -1,7 +1,7 @@
 
 include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
-use <toyota/toyota/front_axle_part_modules.scad>
+use <toyota/front_axle_part_modules.scad>
 
 
 // M60 nut parameters
