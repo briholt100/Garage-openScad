@@ -54,7 +54,7 @@ difference() {
     }
 }
 
-
+// create red spindle section
 difference (){
 color("red")threaded_rod(
             d=thread_diameter, 
