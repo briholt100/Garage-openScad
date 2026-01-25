@@ -1,5 +1,7 @@
 //hilux front axle nut
 
+// modules include: 54mm_nut(),  make_spindle_section(), make_birf_axle()
+
 include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
 
@@ -79,6 +81,8 @@ color("red")threaded_rod(
 translate([0,0,-1])color("green")cylinder(h=nut_thickness+7,r=(thread_diameter/2)-4);
 }
 }
+
+
 
 
 

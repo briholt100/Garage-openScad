@@ -2,6 +2,9 @@
 include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
 
+use <toyota/front_axle_part_modules.scad>
+
+
 // M60 nut parameters
 thread_diameter = 35;     // M35
 thread_pitch = 1.5;       // 1.5mm pitch
@@ -72,7 +75,7 @@ difference() {
 
 
 
-
+translate([50,0,0])54mm_nut();
 
 
 
