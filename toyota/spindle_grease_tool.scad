@@ -34,10 +34,14 @@ center_bolt_camfer_bot_r = 7;
 
 module make_tool_house(){
     difference(){
+        union(){
+            color("lightgreen")
+            translate([0,0,nut_thickness])rotate_extrude() 
+            translate([(thread_diameter/2)+1,0,0])circle(3);
 translate([0,0,nut_thickness-0])
     color("lightgreen")
     cylinder(h=birf_depth+4,r=(thread_diameter/2)+1);
-
+        }
 translate([0,0,nut_thickness-5])
     color("lightgreen")
     cylinder(h=birf_depth+5,r=(thread_diameter/2-3.5));
