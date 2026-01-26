@@ -26,7 +26,7 @@ center_bolt_camfer_top_r = 9;
 center_bolt_camfer_bot_r = 7;
 
 
-54mm_nut();
+//54mm_nut();
 
 
 
@@ -36,8 +36,14 @@ module make_tool_house(){
     difference(){
         union(){
             color("lightgreen")
-            translate([0,0,nut_thickness])rotate_extrude() 
-            translate([(thread_diameter/2)+1,0,0])circle(3);
+            translate([0,0,nut_thickness])
+            rotate_extrude() 
+            translate([(thread_diameter/2)+1,0,0]){
+                difference(){
+                circle(3);
+                translate([-3,-3,0])color("red")square(3);
+                }
+            }
 
             translate([0,0,nut_thickness-0])
             color("lightgreen")
