@@ -23,10 +23,10 @@ center_bolt_depth = 20;
 center_bolt_inner_radius = 7/2;
 center_bolt_camfer_depth = 1;
 center_bolt_camfer_top_r = 9;
-center_bolt_camfer_bot_r = 7;
+center_bolt_camfer_bot_r = 7/2;
 
 
-//54mm_nut();
+54mm_nut();
 
 
 
@@ -64,7 +64,7 @@ translate([0,0,nut_thickness-5])
 
 difference(){  //to see window in clearing
 
-make_tool_house();
+//make_tool_house();
 
 translate([10,0,0])
 cube(50);
@@ -72,11 +72,11 @@ cube(50);
 }
 
 
-translate([0,0,70])
+translate([0,0,birf_depth])  //birf_depth
 {
     union(){
-    translate([0,0,-6])color("orange")cylinder(10,r=4,$fn=50);
-color("orange")cylinder(4,r1=3,r2=10,$fn=50);
+    translate([0,0,-center_bolt_depth])color("orange")cylinder(center_bolt_depth,r=center_bolt_inner_radius,$fn=50);
+color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_r,$fn=50);
     }
 }
 
