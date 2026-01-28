@@ -26,14 +26,14 @@ center_bolt_camfer_top_r = 5;
 center_bolt_camfer_bot_r = 7/2;
 
 
-//54mm_nut();
+
 
 
 
 //make tool housing
 
-//module make_tool_house(){
-    
+module make_tool_house(){
+54mm_nut();    
 translate([0,0,birf_depth+1.5]) //make negative fill
     {
     union()
@@ -77,12 +77,12 @@ color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_
             cylinder(h=birf_depth+5,r=(thread_diameter/2-3.5));
 
         }
-//}
+}
 //
 //difference()
 //    {  //to see window in clearing
 //
-//        make_tool_house();
+        make_tool_house();
 //
 //        translate([5,0,0])
 //            cube(50);
@@ -90,4 +90,4 @@ color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_
 //    }
 //
 //
-//make_birf_axle();
+make_birf_axle();
