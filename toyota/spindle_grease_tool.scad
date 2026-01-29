@@ -51,7 +51,7 @@ color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_
                 color("lightgreen")
                 translate([0,0,nut_thickness])
                rotate_extrude() 
-                translate([(thread_diameter/2)+1,0,0])
+                translate([(thread_diameter/2)+     1,0,0])
                 {  
                     difference() //cuts out corner of extrude
                     {
