@@ -79,15 +79,10 @@ color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_
         }
 }
 //
-//difference()
-//    {  //to see window in clearing
-//
+difference()
+    {  //to see window in clearing
         make_tool_house();
-//
-//        translate([5,0,0])
-//            cube(50);
-//
-//    }
-//
-//
-make_birf_axle();
+        translate([5,0,0])
+            cube(50);
+    }
+translate([0,0,0])make_birf_axle();
