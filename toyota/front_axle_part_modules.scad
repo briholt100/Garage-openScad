@@ -65,6 +65,11 @@ birf_depth_to_snap = 0.924*25.4; //0.924 inches
 count=28;  //spline count
 pathRadius = birf_diam/2;  // Radius of the axle
 spline_radius = 1.4;
+center_bolt_depth = 20;
+center_bolt_inner_radius = 7/2;
+center_bolt_camfer_depth = 1;
+center_bolt_camfer_top_r = 5;
+center_bolt_camfer_bot_r = 7/2;
 
 module make_spindle_section(){
 // create red spindle section
@@ -92,8 +97,9 @@ difference(){
 
 color("cornflowerblue")translate([0,0,0])cylinder(h=nut_thickness+5+birf_depth_to_snap, r=(thread_diameter/2)-4,$fn=100);
 
-color("cornflowerblue")translate([0,0,-1])cylinder(h=nut_thickness+25+birf_depth_to_snap, r=(thread_diameter/2)-7,$fn=100);
+color("cornflowerblue")translate([0,0,-1])cylinder(h=nut_thickness+25+birf_depth_to_snap, r=center_bolt_inner_radius+.5,$fn=100);
 
+translate([0,0,nut_thickness+5.25+birf_depth_to_snap])color("green")translate([0,0,-1])cylinder(h=center_bolt_camfer_depth, r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_r,$fn=100);
 
 for(i = [0 :count]){
     rotate([0, 0, i * 360 / count])
