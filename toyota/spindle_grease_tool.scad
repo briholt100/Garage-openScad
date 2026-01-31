@@ -25,10 +25,29 @@ center_bolt_camfer_depth = 1;
 center_bolt_camfer_top_r = 5;
 center_bolt_camfer_bot_r = 7/2;
 
+//zerk params
+zerk_diam=.25*25.4;
+zerk_depth=8;
 
-
-
-
+    // Threaded hole with chamfered entry/exit
+   translate([9,0,35]) union() {
+        // Main threaded hole
+        translate([0,0,0])threaded_rod(
+            d=zerk_diam, 
+            l=zerk_depth,
+            pitch=1,
+            internal=true,
+            anchor=BOTTOM
+        );
+        
+        // Top chamfer on thread hole
+//        translate([0, 0, nut_thickness])
+//            cylinder(h=chamfer_size, r1=zerk_diam/2, r2=zerk_diam/2 + chamfer_size, $fn=60);
+        
+        // Bottom chamfer on thread hole
+//        translate([0, 0, 0])
+//            cylinder(h=chamfer_size, r1=zerk_diam/2 + chamfer_size, r2=zerk_diam/2, $fn=60);
+    }
 
 //make tool housing
 
