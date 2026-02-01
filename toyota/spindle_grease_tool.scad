@@ -29,26 +29,6 @@ center_bolt_camfer_bot_r = 7/2;
 zerk_diam=.25*25.4;
 zerk_depth=8;
 
-    // Threaded hole with chamfered entry/exit
-   translate([9,0,35]) union() {
-        // Main threaded hole
-        translate([0,0,0])threaded_rod(
-            d=zerk_diam, 
-            l=zerk_depth,
-            pitch=1,
-            internal=true,
-            anchor=BOTTOM
-        );
-        
-        // Top chamfer on thread hole
-//        translate([0, 0, nut_thickness])
-//            cylinder(h=chamfer_size, r1=zerk_diam/2, r2=zerk_diam/2 + chamfer_size, $fn=60);
-        
-        // Bottom chamfer on thread hole
-//        translate([0, 0, 0])
-//            cylinder(h=chamfer_size, r1=zerk_diam/2 + chamfer_size, r2=zerk_diam/2, $fn=60);
-    }
-
 //make tool housing
 
 module make_tool_house(){
@@ -95,13 +75,49 @@ color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_
             color("lightgreen")
             cylinder(h=birf_depth+5,r=(thread_diameter/2-3.5));
 
+
+    // Threaded hole with chamfered entry/exit
+   translate([9,0,35]) union() {
+        // Main threaded hole
+        translate([0,0,0])threaded_rod(
+            d=zerk_diam, 
+            l=zerk_depth,
+            pitch=1,
+            internal=true,
+            anchor=BOTTOM
+        );
+        
+        // Top chamfer on thread hole
+        translate([0, 0, nut_thickness+1.5])
+            cylinder(h=chamfer_size, r1=zerk_diam/2, r2=zerk_diam/2 + chamfer_size, $fn=60);
+        
+        // Bottom chamfer on thread hole
+//        translate([0, 0, 0])
+//            cylinder(h=chamfer_size, r1=zerk_diam/2 + chamfer_size, r2=zerk_diam/2, $fn=60);
+    }
+
+
         }
 }
-//
+
+
+
+
+// make window to check clearances
+module make_housing_with_window(){
 difference()
     {  //to see window in clearing
         make_tool_house();
         translate([5,0,0])
             cube(50);
     }
+}
+
+
+
+
 translate([0,0,0])make_birf_axle();
+
+translate([75,0,0])make_tool_house();
+
+make_housing_with_window();
