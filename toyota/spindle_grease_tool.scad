@@ -26,7 +26,7 @@ center_bolt_camfer_top_r = 5;
 center_bolt_camfer_bot_r = 7/2;
 
 //zerk params
-zerk_diam=.25*25.4;
+zerk_diam=10;
 zerk_depth=8;
 
 //make tool housing
@@ -77,12 +77,12 @@ color("orange")cylinder(4,r2=center_bolt_camfer_top_r,r1=center_bolt_camfer_bot_
 
 
     // Threaded hole with chamfered entry/exit
-   translate([9,0,35]) union() {
+   translate([8.5,0,35]) union() {
         // Main threaded hole
         translate([0,0,0])threaded_rod(
             d=zerk_diam, 
             l=zerk_depth,
-            pitch=1,
+            pitch=1.5,
             internal=true,
             anchor=BOTTOM
         );
