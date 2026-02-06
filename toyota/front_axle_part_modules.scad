@@ -13,7 +13,7 @@ hex_size = 54;            // Across-flats dimension
 chamfer_size = 1.5;       // Chamfer size in mm
 
 //helper
-module 54mm_nut_helper(){
+module make_54mm_nut_helper(){
 echo("USAGE: 54mm_nut(thread_diameter =35, thread_pitch = 1.5, nut_thickness = 5.5, hex_size = 54, chamfer_size = 1.5)");
   echo("  thread_diameter: outer size is M35 (mm)");
   echo("  thread_pitch: 1.5 metric (mm)");
@@ -22,8 +22,8 @@ echo("USAGE: 54mm_nut(thread_diameter =35, thread_pitch = 1.5, nut_thickness = 5
   echo("  chamfer_size, the bevel around the threads 1.5 (mm)");
 }
 
-54mm_nut_helper();
-module 54mm_nut(thread_diameter =35,
+make_54mm_nut_helper();
+module make_54mm_nut(thread_diameter =35,
                     thread_pitch = 1.5,
                     nut_thickness = 5.5,
                     hex_size = 54,
@@ -118,6 +118,6 @@ for(i = [0 :count]){
 }
 
 //remove // for preview
-translate([50,0,0]) 54mm_nut();
+translate([50,0,0]) make_54mm_nut();
 translate([-35,0,0])  make_birf_axle();
 make_spindle_section();

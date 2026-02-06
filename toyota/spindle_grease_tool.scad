@@ -1,7 +1,7 @@
 //
 include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
-use <toyota/front_axle_part_modules.scad>
+use <./front_axle_part_modules.scad>
 //
 //
 // M60 nut parameters
@@ -31,10 +31,10 @@ zerk_depth=8;
 
 //make tool housing
 
-54mm_nut_helper();
+
 
 module make_tool_house(){
-54mm_nut();    
+make_54mm_nut();    
 translate([0,0,birf_depth+1.5]) //make negative fill
     {
     union()
@@ -123,3 +123,6 @@ translate([0,0,0])make_birf_axle();
 translate([75,0,0])make_tool_house();
 
 make_housing_with_window();
+
+
+make_54mm_nut_helper();   

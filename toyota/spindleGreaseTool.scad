@@ -2,7 +2,7 @@
 include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
 
-use <toyota/front_axle_part_modules.scad>
+use <./front_axle_part_modules.scad>
 
 
 // M60 nut parameters
@@ -75,7 +75,7 @@ difference() {
 
 
 
-translate([50,0,0])54mm_nut();
+translate([50,0,0])make_54mm_nut();
 
 
 
