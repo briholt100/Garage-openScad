@@ -12,8 +12,17 @@ nut_thickness = 5.5;       // 6mm thick
 hex_size = 54;            // Across-flats dimension
 chamfer_size = 1.5;       // Chamfer size in mm
 
+//helper
+module 54mm_nut_helper(){
+echo("USAGE: 54mm_nut(thread_diameter =35, thread_pitch = 1.5, nut_thickness = 5.5, hex_size = 54, chamfer_size = 1.5)");
+  echo("  thread_diameter: outer size is M35 (mm)");
+  echo("  thread_pitch: 1.5 metric (mm)");
+  echo("  nut_thickness (basically height): 5.5(mm)");
+  echo("  hex_size = 54 (mm)");
+  echo("  chamfer_size, the bevel around the threads 1.5 (mm)");
+}
 
-
+54mm_nut_helper();
 module 54mm_nut(thread_diameter =35,
                     thread_pitch = 1.5,
                     nut_thickness = 5.5,

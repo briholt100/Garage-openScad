@@ -31,6 +31,8 @@ zerk_depth=8;
 
 //make tool housing
 
+54mm_nut_helper();
+
 module make_tool_house(){
 54mm_nut();    
 translate([0,0,birf_depth+1.5]) //make negative fill
