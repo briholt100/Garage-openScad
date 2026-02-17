@@ -47,3 +47,26 @@ difference(){
 }
 }
 }
+
+
+
+
+
+
+
+module make_dad_disc_ver(){
+color("cornflowerblue")rotate_extrude(angle=360,convexity=10)
+{
+    translate([.5*height,0,0])square([.5,height]);
+    translate([.5*height,height-.5,0])square([(discDiameter/2)-2.6,.5]);
+    difference()
+    {
+    translate([discDiameter/2 ,height/2,0])
+        color("red") circle(r=height/2,$fn=50);
+          translate([(discDiameter/2)-1,(height/2)-.5,0])circle(height/2,$fn=50);
+    }
+}
+}
+
+translate([0,0,40])make_dad_disc_ver();
+
