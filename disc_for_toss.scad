@@ -28,9 +28,22 @@ module make_basic_disc(
 }
 
 difference(){
-color("red")translate([-0,0,1])make_basic_disc();
+color("red")make_basic_disc();
     
-make_basic_disc(h=inner_discHeight,
+translate([0,0,-1])make_basic_disc(h=inner_discHeight,
     radius=inner_discDiam/2,
     inner_circle_radius=inner_in_cicle_radius);
+}
+
+
+translate([050,0,0]){
+rotate_extrude(angle=360,convexity=10 ){
+translate([(discDiameter/2)-2,0,0])
+difference(){
+    translate([0,0,0])
+    square(height+1);
+    translate([0,height/2,0])
+    circle(r=height/2);
+}
+}
 }
