@@ -7,4 +7,4 @@ polygon(points=[[0,0],[w,0],[w,wall_height],[apex_width,apex_height],[0,wall_hei
 
 house_profile();
 
-color("blue")translate([-15,-55/2,0])rotate([0,0,90])house_profile(l=20,w=13,apex_width=13/2,apex_height=12);
+color("blue")translate([-15,-55/2,0])rotate([0,0,90])house_profile(l=22,w=13,apex_width=13/2,apex_height=12);
