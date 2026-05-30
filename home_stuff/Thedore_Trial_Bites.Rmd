@@ -1,0 +1,32 @@
+---
+title: "Theodore_bites"
+author: "Brian Holt"
+date: "2026-05-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(googlesheets4)
+library(tidyverse)
+library(lubridate)
+```
+
+
+# Load the data
+
+```{r}
+
+sheet_url <- "https://docs.google.com/spreadsheets/d/1JxhqL3cN1UmAlN-7_J3RVnG870xFPCWuYsOloeokIkE/edit?resourcekey=&gid=1723608119#gid=1723608119"
+
+bites <- read_sheet(sheet_url)
+
+
+```
+
+```{r}
+
+bites
+
+```
+
