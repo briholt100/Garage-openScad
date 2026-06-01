@@ -6,8 +6,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(googlesheets4)
+knitr::opts_chunk$set(echo = F,warning=F,error=F)
+
 library(tidyverse)
 library(lubridate)
 ```
@@ -16,17 +16,39 @@ library(lubridate)
 # Load the data
 
 ```{r}
+bites <- read.csv("bites.csv")
 
-sheet_url <- "https://docs.google.com/spreadsheets/d/1JxhqL3cN1UmAlN-7_J3RVnG870xFPCWuYsOloeokIkE/edit?resourcekey=&gid=1723608119#gid=1723608119"
+```
 
-bites <- read_sheet(sheet_url)
+```{r}
+colnames(bites) <- c("row_number","timestamp","food","count","liked")
 
-
+bites$timestamp<- lubridate::ymd_hms(bites$timestamp)
 ```
 
 ```{r}
 
 bites
+str(bites)
 
+```
+
+# How many has he tried?
+
+```{r}
+nrow(bites)
+```
+
+# How many per day? 
+
+
+
+```{r}
+# bites %>% 
+  # mutate(year=year(timestamp),
+  #        month=month(timestamp),
+  #        day=day(timestamp)) %>%
+  # group_by(year,month,day) %>% summarise(total=sum(count)) %>% 
+  # ggplot(aes(x=day,y=total))+geom_bar()
 ```
 
