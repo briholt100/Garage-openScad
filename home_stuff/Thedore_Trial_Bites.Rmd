@@ -39,6 +39,16 @@ str(bites)
 nrow(bites)
 ```
 
+# How many total bites
+```{r}
+  bites %>% select(`How many times?`) %>% group_by(`How many times?`)%>% summarise(n=n()) %>% 
+  mutate(total=n*`How many times?`) %>% ungroup() %>% 
+  summarise(total=sum(total))
+
+```
+
+
+
 # How many per day? 
 
 
